@@ -1,7 +1,0 @@
-risk_id,title,parameter,default_low,default_high,unit,owner,comment
-R1,Common Earth-channel disruption,earth_common_capacity_factor,0.50,0.90,fraction,Operator and Earth suppliers,"Research scenario; do not treat as an empirical probability"
-R2,Earth-New commissioning delay,earth_new_delay_months,3,12,months,Earth-New supplier,"Applies only if Earth-New is selected"
-R3,Lunar-ISRU underperformance,isru_delivery_factor,0.40,0.90,fraction,ISRU operator,"Mandatory stress already sets 0.55 in 2038 and 0.75 in 2039; do not double count"
-R4,Storage thermal-control degradation,storage_loss_rate,0.02,0.06,fraction,Depot operator,"Use as a separate research scenario, not on top of the mandatory loss rule without explanation"
-R5,Demand surge,demand_multiplier,1.05,1.35,factor,Operator and customers,"Separate from mandatory +15% stress unless a joint scenario is explicitly defined"
-R6,Earth supply price shock,earth_price_multiplier,1.10,1.60,factor,Operator and suppliers,"Geopolitical/market research scenario; no probability is implied"

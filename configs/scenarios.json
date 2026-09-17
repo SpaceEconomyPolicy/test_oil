@@ -1,6 +1,0 @@
-{
-  "standard": {"description": "Case base demand and prices; deterministic planned deliveries; reliability is not multiplied into supply."},
-  "mandatory_stress": {"description": "+15% demand in 2038-2040; +25% A/B variable prices in 2038-2039; ISRU actual delivery factors 55%/75%/100%; storage loss rate must be <=2% from 2038."},
-  "low_demand": {"description": "Low demand series from case input; critical demand keeps the base-year critical share."},
-  "high_demand": {"description": "High demand series from case input; critical demand keeps the base-year critical share."}
-}
