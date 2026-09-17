@@ -1,145 +1,114 @@
 # Происхождение данных, расхождения и границы исходного набора
 
-Этот файл фиксирует, откуда перенесено каждое обязательное числовое условие стартового репозитория. Если исходные материалы расходятся, формулировка допускает несколько трактовок или нужный первичный файл отсутствует, репозиторий не подменяет это догадкой.
+Этот файл фиксирует, откуда перенесено каждое обязательное числовое условие стартового репозитория. Если исходные материалы расходятся или нужный файл отсутствует, репозиторий не подменяет это догадкой.
 
 ## Правила переноса
 
 1. `CASE_INPUT` переносится без скрытого исправления смысла.
 2. Если значение задано диапазоном, диапазон сохраняется.
-3. Если одна и та же величина описана в нескольких материалах, фиксируются все относящиеся к ней источники и выбранная контрольная трактовка.
+3. Если одна и та же величина описана в нескольких материалах, фиксируются все источники и выбранная трактовка.
 4. Если первичный файл отсутствует, это отмечается явно.
 5. Научная публикация не заменяет синтетические цены, мощности и лимиты организатора.
-6. Пояснения жюри используются для снятия неоднозначности контрольного расчёта, но не для добавления нового «правильного» плана снабжения.
 
-## Непредоставленный первичный файл
+## Источники текущей сборки
 
-В `Кейс_2_Топливный_космоконтур_2035.docx` указано, что исходные параметры находятся в файле `Анкета_постановщика_КосмоХакатон_ЕТ.xlsx`, лист `Данные кейса 2`. В наборе материалов, использованном для подготовки текущей версии `test_oil`, этого XLSX-файла нет.
+Основные значения перенесены из `Кейс_2_Топливный_космоконтур_2035.docx` и сверены с `Пояснительная_записка_для_жюри_Кейс_2_КЭП.docx` и `Критерии_оценки_Кейс_2_КЭП_upd.xlsx.docx`.
 
-Поэтому значения в `data/` транскрибированы из предоставленного DOCX кейса и пояснительной записки для жюри. Если исходный XLSX будет предоставлен позднее, перед выпуском финальной версии репозитория требуется построчная сверка XLSX с `data/*.csv` и данным журналом происхождения. До такой сверки нельзя утверждать, что машинно-читаемый набор является побайтной копией исходной анкеты.
+Постановка ссылается на `Анкета_постановщика_КосмоХакатон_ЕТ.xlsx`, лист `Данные кейса 2`, однако этот XLSX не присутствует в наборе материалов, использованном для создания `test_oil`. Поэтому машинно-читаемые значения репозитория должны быть повторно сверены с XLSX, если организатор предоставит его позднее. Отсутствующее содержимое не восстанавливается догадками.
 
-## Реестр обязательных параметров
+## Контрольные значения
 
 | parameter_id | value | unit | status | organizer_source | interpretation_note | unresolved_issue |
 |---|---:|---|---|---|---|---|
-| demand.2035.base_total | 100 | т/год | CASE_INPUT | `Кейс_2_Топливный_космоконтур_2035.docx`, раздел «Данные кейса / Спрос» | общий базовый спрос | первичный XLSX отсутствует |
-| demand.2035.base_critical | 80 | т/год | CASE_INPUT | тот же раздел | входит в общий спрос, не прибавляется к нему | первичный XLSX отсутствует |
-| demand.2035.low_total | 80 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2035.high_total | 110 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2036.base_total | 140 | т/год | CASE_INPUT | тот же раздел | общий базовый спрос | первичный XLSX отсутствует |
-| demand.2036.base_critical | 105 | т/год | CASE_INPUT | тот же раздел | входит в общий спрос | первичный XLSX отсутствует |
-| demand.2036.low_total | 112 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2036.high_total | 154 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2037.base_total | 190 | т/год | CASE_INPUT | тот же раздел | общий базовый спрос | первичный XLSX отсутствует |
-| demand.2037.base_critical | 135 | т/год | CASE_INPUT | тот же раздел | входит в общий спрос | первичный XLSX отсутствует |
-| demand.2037.low_total | 152 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2037.high_total | 209 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2038.base_total | 250 | т/год | CASE_INPUT | тот же раздел | общий базовый спрос | первичный XLSX отсутствует |
-| demand.2038.base_critical | 170 | т/год | CASE_INPUT | тот же раздел | входит в общий спрос | первичный XLSX отсутствует |
-| demand.2038.low_total | 200 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2038.high_total | 312.5 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2039.base_total | 320 | т/год | CASE_INPUT | тот же раздел | общий базовый спрос | первичный XLSX отсутствует |
-| demand.2039.base_critical | 210 | т/год | CASE_INPUT | тот же раздел | входит в общий спрос | первичный XLSX отсутствует |
-| demand.2039.low_total | 256 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2039.high_total | 400 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2040.base_total | 390 | т/год | CASE_INPUT | тот же раздел | общий базовый спрос | первичный XLSX отсутствует |
-| demand.2040.base_critical | 250 | т/год | CASE_INPUT | тот же раздел | входит в общий спрос | первичный XLSX отсутствует |
-| demand.2040.low_total | 312 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| demand.2040.high_total | 487.5 | т/год | CASE_INPUT | тот же раздел | отдельный сценарий чувствительности | первичный XLSX отсутствует |
-| source.A.capacity | 190 | т/год | CASE_INPUT | DOCX кейса, «Каналы снабжения», Earth-Core | максимальная мощность | — |
-| source.A.variable_cost | 6.2 | млн у.е./т | CASE_INPUT | тот же раздел | цена включает доставку в условный узел в агрегированной модели | — |
-| source.A.reservation_rate | 0.45 | млн у.е. за т/год мощности | CASE_INPUT | тот же раздел | годовая ставка резервирования | — |
-| source.A.take_or_pay | 0.70 | доля | CASE_INPUT | тот же раздел | доля зарезервированной мощности | — |
-| source.A.lead_time | 12 | месяцев | CASE_INPUT | тот же раздел | хранить как 12 месяцев | — |
-| source.A.reliability | 0.96 | коэффициент | CASE_INPUT | тот же раздел | не является автоматическим множителем поставки в BASE | математическая интерпретация задаётся в отдельном риск-блоке |
-| source.B.capacity | 110 | т/год | CASE_INPUT | DOCX кейса, «Каналы снабжения», Earth-Flex | максимальная мощность | — |
-| source.B.variable_cost | 8.9 | млн у.е./т | CASE_INPUT | тот же раздел | — | — |
-| source.B.reservation_rate | 0.15 | млн у.е. за т/год мощности | CASE_INPUT | тот же раздел | — | — |
-| source.B.take_or_pay | 0 | доля | CASE_INPUT | тот же раздел | take-or-pay отсутствует | — |
-| source.B.lead_time | 4 | месяца | CASE_INPUT | тот же раздел | — | — |
-| source.B.reliability | 0.985 | коэффициент | CASE_INPUT | тот же раздел | не BASE delivery multiplier | математическая интерпретация задаётся командой в риск-блоке |
-| source.C.capacity | 130 | т/год | CASE_INPUT | DOCX кейса, «Каналы снабжения», Earth-New | доступность зависит от реализации опциона и подготовки | фиксированный год доступности не задан |
-| source.C.variable_cost | 7.1 | млн у.е./т | CASE_INPUT | тот же раздел | — | — |
-| source.C.reservation_rate | 0.30 | млн у.е. за т/год мощности | CASE_INPUT | тот же раздел | — | — |
-| source.C.take_or_pay | 0.50 | доля | CASE_INPUT | тот же раздел | действует после ввода | — |
-| source.C.lead_time | 18–24 | месяца | CASE_INPUT | тот же раздел | диапазон сохраняется | конкретное значение внутри диапазона — явно раскрываемое допущение реализации |
-| source.C.reliability | 0.88 первый год; 0.94 далее | коэффициент | CASE_INPUT | тот же раздел | не BASE delivery multiplier | — |
-| source.D.capacity | 120 | т/год | CASE_INPUT | DOCX кейса, «Каналы снабжения», Lunar-ISRU | после финансирования и ввода | — |
-| source.D.variable_cost | 3.0 | млн у.е./т | CASE_INPUT | тот же раздел | — | — |
-| source.D.reservation_rate | 0 | млн у.е. за т/год мощности | CASE_INPUT | тот же раздел | платы за резерв нет | — |
-| source.D.take_or_pay | 0 | доля | CASE_INPUT | тот же раздел | отсутствует | — |
-| source.D.lead_time | 1–2 | месяца после ввода | CASE_INPUT | тот же раздел | диапазон сохраняется | — |
-| source.D.reliability | 0.78 / 0.90 / 0.93 | коэффициент | CASE_INPUT | тот же раздел | 2038 / 2039 / 2040; не BASE delivery multiplier | — |
-| source.E.capacity | 80 | т/год | CASE_INPUT | DOCX кейса, «Каналы снабжения», Emergency | аварийная/спотовая мощность | — |
-| source.E.variable_cost | 13.8 | млн у.е./т | CASE_INPUT | тот же раздел | — | — |
-| source.E.reservation_rate | 0.35 | млн у.е. за т/год мощности | CASE_INPUT | тот же раздел | контракт предусматривает резерв мощности | — |
-| source.E.take_or_pay | 0 | доля | CASE_INPUT | таблица/описание кейса | отдельный take-or-pay не задан | — |
-| source.E.lead_time | 6 | недель | CASE_INPUT | тот же раздел | хранится именно в неделях, без скрытого перевода в «1.5 месяца» | — |
-| source.E.reliability | 0.995 | коэффициент | CASE_INPUT | тот же раздел | не BASE delivery multiplier | — |
-| storage.BASE.capacity | 70 | т | CASE_INPUT | DOCX кейса, «Хранилище и инвестиционные решения» | существующая ёмкость | — |
-| storage.BASE.loss_rate | 0.045 | доля от throughput | CASE_INPUT | тот же раздел | применяется к валовому поступлению один раз | — |
-| storage.BASE.holding_cost | 0.72 | млн у.е./т-год | CASE_INPUT | тот же раздел | база — средний физический запас с учётом времени | — |
-| storage.ZBO.capex | 180 | млн у.е. | CASE_INPUT | тот же раздел | модернизация доступна как опцион с 2036 | — |
-| storage.ZBO.capacity | 120 | т | CASE_INPUT | тот же раздел | ёмкость после модернизации | — |
-| storage.ZBO.loss_rate | 0.012 | доля от throughput | CASE_INPUT | тот же раздел | учебный модельный коэффициент, не универсальная характеристика реальной ZBO | — |
-| storage.ZBO.fixed_opex | 12 | млн у.е./год | CASE_INPUT | тот же раздел | дополнительный OPEX | — |
-| investment.LUNAR_ISRU.capex | 1250 | млн у.е. | CASE_INPUT | тот же раздел | профинансировать до 2038; ввод с 2038 | график траншей не задан |
-| investment.LUNAR_ISRU.fixed_opex | 70 | млн у.е./год | CASE_INPUT | тот же раздел | постоянный дополнительный OPEX | — |
-| investment.EARTH_NEW.option_fee | 90 | млн у.е. | CASE_INPUT | тот же раздел | право ввода новой мощности | — |
-| investment.EARTH_NEW.exercise_cost | 270 | млн у.е. | CASE_INPUT | тот же раздел | платёж при реализации | — |
-| investment.EARTH_NEW.total | 360 | млн у.е. | CASE_INPUT | DOCX кейса + пояснение жюри | `90 + 270 = 360`; не добавлять ещё один 360 | — |
-| constraint.base_critical_service | 0.99 | доля | CASE_INPUT | DOCX кейса, «Ограничения и обязательные проверки» | ежегодный минимум в BASE | — |
-| constraint.base_total_service | 0.97 | доля | CASE_INPUT | тот же раздел | ежегодный минимум в BASE | — |
-| constraint.capex_through_2037 | 1800 | млн у.е. | CASE_INPUT | тот же раздел | накопленный CAPEX до конца 2037 | — |
-| constraint.capex_through_2040 | 2800 | млн у.е. | CASE_INPUT | тот же раздел | накопленный CAPEX до конца 2040 | — |
-| constraint.reserve_days | 45 | дней | CASE_INPUT | DOCX кейса + пояснение жюри | физический запас либо доказуемо эквивалентный аварийный договорный резерв | эквивалентность должна быть показана объёмом и сроком прибытия |
-| constraint.emergency_base_streak | 2 | последовательных года | CASE_INPUT | DOCX кейса | Emergency не может быть основой снабжения дольше | определение «основы» должно быть прозрачно реализовано командой |
+| demand_2035_total | 100 | t/year | CASE_INPUT | case DOCX | critical included in total | source XLSX absent |
+| demand_2035_critical | 80 | t/year | CASE_INPUT | case DOCX | subset of total | source XLSX absent |
+| demand_2035_low | 80 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2035_high | 110 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2036_total | 140 | t/year | CASE_INPUT | case DOCX | critical included in total | source XLSX absent |
+| demand_2036_critical | 105 | t/year | CASE_INPUT | case DOCX | subset of total | source XLSX absent |
+| demand_2036_low | 112 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2036_high | 154 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2037_total | 190 | t/year | CASE_INPUT | case DOCX | critical included in total | source XLSX absent |
+| demand_2037_critical | 135 | t/year | CASE_INPUT | case DOCX | subset of total | source XLSX absent |
+| demand_2037_low | 152 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2037_high | 209 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2038_total | 250 | t/year | CASE_INPUT | case DOCX | critical included in total | source XLSX absent |
+| demand_2038_critical | 170 | t/year | CASE_INPUT | case DOCX | subset of total | source XLSX absent |
+| demand_2038_low | 200 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2038_high | 312.5 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2039_total | 320 | t/year | CASE_INPUT | case DOCX | critical included in total | source XLSX absent |
+| demand_2039_critical | 210 | t/year | CASE_INPUT | case DOCX | subset of total | source XLSX absent |
+| demand_2039_low | 256 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2039_high | 400 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2040_total | 390 | t/year | CASE_INPUT | case DOCX | critical included in total | source XLSX absent |
+| demand_2040_critical | 250 | t/year | CASE_INPUT | case DOCX | subset of total | source XLSX absent |
+| demand_2040_low | 312 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| demand_2040_high | 487.5 | t/year | CASE_INPUT | case DOCX | sensitivity input | source XLSX absent |
+| earth_core_capacity | 190 | t/year | CASE_INPUT | case DOCX | max channel capacity | source XLSX absent |
+| earth_core_variable_cost | 6.2 | mln units/t | CASE_INPUT | case DOCX | includes delivery to hub in aggregate model | source XLSX absent |
+| earth_core_reservation | 0.45 | mln units per t/year capacity | CASE_INPUT | case DOCX | annual reservation rate | source XLSX absent |
+| earth_core_top | 0.70 | share | CASE_INPUT | case DOCX | take-or-pay share | source XLSX absent |
+| earth_core_lead | 12 | months | CASE_INPUT | case DOCX | exact source wording | source XLSX absent |
+| earth_core_reliability | 0.96 | index | CASE_INPUT | case DOCX | risk input, not BASE multiplier | source XLSX absent |
+| earth_flex_capacity | 110 | t/year | CASE_INPUT | case DOCX | max channel capacity | source XLSX absent |
+| earth_flex_variable_cost | 8.9 | mln units/t | CASE_INPUT | case DOCX | aggregate delivered price | source XLSX absent |
+| earth_flex_reservation | 0.15 | mln units per t/year capacity | CASE_INPUT | case DOCX | annual reservation rate | source XLSX absent |
+| earth_flex_top | 0 | share | CASE_INPUT | case DOCX | no TOP minimum | source XLSX absent |
+| earth_flex_lead | 4 | months | CASE_INPUT | case DOCX | exact source wording | source XLSX absent |
+| earth_flex_reliability | 0.985 | index | CASE_INPUT | case DOCX | risk input | source XLSX absent |
+| earth_new_capacity | 130 | t/year | CASE_INPUT | case DOCX | after exercise/preparation | source XLSX absent |
+| earth_new_variable_cost | 7.1 | mln units/t | CASE_INPUT | case DOCX | aggregate delivered price | source XLSX absent |
+| earth_new_reservation | 0.30 | mln units per t/year capacity | CASE_INPUT | case DOCX | annual reservation rate | source XLSX absent |
+| earth_new_top | 0.50 | share | CASE_INPUT | case DOCX | after startup | source XLSX absent |
+| earth_new_lead | 18–24 | months | CASE_INPUT | case DOCX | preserve range | source XLSX absent |
+| earth_new_reliability | 0.88 first year; 0.94 later | index | CASE_INPUT | case DOCX | risk input | source XLSX absent |
+| lunar_isru_capacity | 120 | t/year | CASE_INPUT | case DOCX | after required CAPEX | source XLSX absent |
+| lunar_isru_variable_cost | 3.0 | mln units/t | CASE_INPUT | case DOCX | aggregate delivered price | source XLSX absent |
+| lunar_isru_reservation | 0 | mln units per t/year capacity | CASE_INPUT | case DOCX | no reservation charge | source XLSX absent |
+| lunar_isru_top | 0 | share | CASE_INPUT | case DOCX | no TOP | source XLSX absent |
+| lunar_isru_lead | 1–2 | months | CASE_INPUT | case DOCX | after commissioning | source XLSX absent |
+| lunar_isru_reliability | 0.78 / 0.90 / 0.93 | index | CASE_INPUT | case DOCX | 2038 / 2039 / 2040 | source XLSX absent |
+| emergency_capacity | 80 | t/year | CASE_INPUT | case DOCX | emergency/spot maximum | source XLSX absent |
+| emergency_variable_cost | 13.8 | mln units/t | CASE_INPUT | case DOCX | aggregate delivered price | source XLSX absent |
+| emergency_reservation | 0.35 | mln units per t/year capacity | CASE_INPUT | case DOCX | capacity-reserve contract | source XLSX absent |
+| emergency_lead | 6 | weeks | CASE_INPUT | case DOCX | preserve weeks exactly | source XLSX absent |
+| emergency_reliability | 0.995 | index | CASE_INPUT | case DOCX | risk input | source XLSX absent |
+| base_storage_capacity | 70 | t | CASE_INPUT | case DOCX | existing storage | source XLSX absent |
+| base_storage_loss | 0.045 | share of throughput | CASE_INPUT | case DOCX | applied to gross inflow | source XLSX absent |
+| holding_cost | 0.72 | mln units/t-year | CASE_INPUT | case DOCX | average physical inventory | source XLSX absent |
+| zbo_capex | 180 | mln units | CASE_INPUT | case DOCX | option from 2036 | source XLSX absent |
+| zbo_capacity | 120 | t | CASE_INPUT | case DOCX | capacity after modernization | source XLSX absent |
+| zbo_loss | 0.012 | share of throughput | CASE_INPUT | case DOCX | model coefficient, not universal tech fact | source XLSX absent |
+| zbo_opex | 12 | mln units/year | CASE_INPUT | case DOCX | additional OPEX | source XLSX absent |
+| lunar_isru_capex | 1250 | mln units | CASE_INPUT | case DOCX | finance before 2038 | source XLSX absent |
+| lunar_isru_fixed_opex | 70 | mln units/year | CASE_INPUT | case DOCX | after commissioning | source XLSX absent |
+| earth_new_option_fee | 90 | mln units | CASE_INPUT | case DOCX | right to introduce capacity | source XLSX absent |
+| earth_new_exercise | 270 | mln units | CASE_INPUT | case DOCX | paid on exercise | source XLSX absent |
+| earth_new_total | 360 | mln units | CASE_INPUT | case DOCX + jury note | total is 90+270, not an extra payment | source XLSX absent |
+| base_critical_service | 0.99 | share | CASE_INPUT | case DOCX | annual BASE minimum | source XLSX absent |
+| base_total_service | 0.97 | share | CASE_INPUT | case DOCX | annual BASE minimum | source XLSX absent |
+| capex_through_2037 | 1800 | mln units | CASE_INPUT | case DOCX | upper bound | source XLSX absent |
+| capex_through_2040 | 2800 | mln units | CASE_INPUT | case DOCX | cumulative upper bound | source XLSX absent |
+| reserve_days | 45 | days | CASE_INPUT | case DOCX | physical or demonstrated contracted equivalent | source XLSX absent |
+| emergency_base_streak | 2 | consecutive years max | CASE_INPUT | case DOCX | Emergency cannot be base beyond this streak | source XLSX absent |
 
-## Происхождение обязательного стрессового сценария
+## Mandatory stress provenance
 
-Контрольная трактовка берётся из `Пояснительная_записка_для_жюри_Кейс_2_КЭП.docx`, раздел о методике стресс-тестов. Эти параметры применяются отдельно от сценариев низкого/высокого спроса и дополнительных рисков команды.
+| Parameter | 2035–2037 | 2038 | 2039 | 2040 |
+|---|---:|---:|---:|---:|
+| total base demand multiplier | 1.00 | 1.15 | 1.15 | 1.15 |
+| critical base demand multiplier | 1.00 | 1.15 | 1.15 | 1.15 |
+| Earth-Core variable-price multiplier | 1.00 | 1.25 | 1.25 | 1.00 |
+| Earth-Flex variable-price multiplier | 1.00 | 1.25 | 1.25 | 1.00 |
+| Lunar-ISRU actual-delivery share | plan | 0.55 | 0.75 | 1.00 |
+| stress loss ceiling | n/a | 0.02 | 0.02 | 0.02 |
 
-| stress_parameter | value | period | status | note |
-|---|---:|---|---|---|
-| total_base_demand_multiplier | 1.15 | 2038–2040 | CASE_INPUT | применяется к базовому общему спросу |
-| critical_base_demand_multiplier | 1.15 | 2038–2040 | CASE_INPUT | применяется к базовому критическому спросу |
-| Earth-Core.variable_price_multiplier | 1.25 | 2038–2039 | CASE_INPUT | в 2040 возвращается 1.00 |
-| Earth-Flex.variable_price_multiplier | 1.25 | 2038–2039 | CASE_INPUT | в 2040 возвращается 1.00 |
-| Lunar-ISRU.actual_delivery_share | 0.55 | 2038 | CASE_INPUT | фактическая доля от планового объёма |
-| Lunar-ISRU.actual_delivery_share | 0.75 | 2039 | CASE_INPUT | фактическая доля от планового объёма |
-| Lunar-ISRU.actual_delivery_share | 1.00 | 2040 | CASE_INPUT | возврат к плановой поставке |
-| losses_divided_by_throughput_ceiling | 0.02 | с 2038 | CASE_INPUT | действует в MANDATORY_STRESS, не в 2035–2037 |
+The 0.55 and 0.75 values are actual delivery shares for the mandatory stress and are **not** multiplied by reliability again. Reservation tariffs, CAPEX and unrelated prices are not changed by the mandatory +25% price shock. The mandatory stress is not automatically combined with high demand or an optional geopolitical scenario.
 
-**Критическое правило:** 55% и 75% — уже заданные фактические доли поставки Lunar-ISRU в обязательном стрессе. Их нельзя повторно умножать на коэффициент надёжности.
+## Known source limitations
 
-## Контрольные уточнения, снимающие неоднозначность
-
-- В BASE своевременно заказанные доступные объёмы поступают по плану. Коэффициенты `reliability` проверяются отдельно в риск-блоке.
-- Критический спрос является частью общего спроса.
-- Потери хранилища в контрольном расчёте начисляются один раз на валовое поступление (`throughput`). Повторное начисление той же модельной потери на остаток создаёт двойной счёт.
-- Отрицательный физический запас не используется для изображения дефицита: shortage выводится отдельной величиной.
-- Платёж take-or-pay входит в формулу минимального оплачиваемого объёма и не начисляется второй раз отдельной строкой.
-- Резерв 45 дней считается от общего спроса соответствующего года и сценария как `D * 45 / 365`.
-- Годовая мощность Emergency сама по себе не доказывает наличие эквивалентного 45-дневного резерва: важны контрактный объём и срок активации/прибытия.
-- Условие stress `losses / throughput <= 2%` начинает действовать только с 2038 года.
-
-## Известные границы и редакционные адаптации
-
-1. Исходный DOCX указывает GitVerse как площадку передачи решения. Этот starter kit публикуется на GitHub по решению владельца репозитория. Это изменение площадки не меняет предметные требования кейса.
-2. `Earth-New` одновременно описан как проект подготовки стоимостью 360 и как опцион `90 + 270`; пояснение жюри снимает риск двойного счёта: общий объём вложений — 360, а не 720.
-3. Emergency задан с lead time 6 недель. В машинно-читаемых данных сохраняется единица `week`; автоматический перевод в месяцы не является исходным условием.
-4. Для Earth-New и Lunar-ISRU заданы диапазоны lead time. Репозиторий не выбирает одну точку диапазона за команду.
-5. Для Lunar-ISRU не задана внутренняя разбивка CAPEX 1250 по годам до 2038. График финансирования, если он нужен конкретной модели, должен быть явно оформлен как `TEAM_DECISION`/`TEAM_ASSUMPTION` в рамках условия «профинансировать до 2038».
-
-## Запрещённое «дозаполнение» данных
-
-До появления первичного XLSX в `CASE_INPUT` нельзя добавлять без маркировки:
-
-- цены конкретных ракет или компаний;
-- конкретные расписания запусков;
-- вероятности санкций, аварий и отказов, которых нет в исходных материалах;
-- прогноз спроса после 2040 года;
-- штраф за дефицит или стоимость потери миссии;
-- выручку оператора;
-- «реальную» эффективность ZBO вместо учебного коэффициента кейса.
-
-Если команда исследует такие величины, они относятся к отдельным `TEAM_ASSUMPTION` и не заменяют контрольный набор.
+- The source XLSX referenced in the case is absent from the current material set.
+- `Emergency lead time` remains six weeks. No hidden conversion to 1.5 months is stored as an organizer fact.
+- `ZBO 1.2%` is a synthetic case coefficient, not a universal technology claim.
+- No external paper is used to replace organizer prices/capacities.
+- Post-2040 values are not organizer forecasts unless separately supplied.
