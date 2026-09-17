@@ -1,0 +1,6 @@
+source_id,name,kind,max_capacity_tpy,variable_cost_m_per_t,reservation_fee_m_per_tpy,take_or_pay_share,lead_time_min_days,lead_time_max_days,available_from,case_reliability_2035,case_reliability_2036,case_reliability_2037,case_reliability_2038,case_reliability_2039,case_reliability_2040,reliability_first_operating_year,reliability_later,notes
+A,Earth-Core,long_term_earth,190,6.2,0.45,0.70,365,365,2035,0.96,0.96,0.96,0.96,0.96,0.96,,,"Long-term Earth-to-orbit channel; case-synthetic economics"
+B,Earth-Flex,flex_earth,110,8.9,0.15,0.00,122,122,2035,0.985,0.985,0.985,0.985,0.985,0.985,,,"Flexible Earth-to-orbit channel; case-synthetic economics"
+C,Earth-New,new_earth,130,7.1,0.30,0.50,548,730,2035,0.88,0.94,0.94,0.94,0.94,0.94,0.88,0.94,"Available only after option exercise and preparation; reliability 0.88 in first operating year, 0.94 thereafter"
+D,Lunar-ISRU,lunar_isru,120,3.0,0.00,0.00,30,61,2038,,,,0.78,0.90,0.93,,,"Case scenario for lunar source; not a technology forecast"
+E,Emergency,emergency,80,13.8,0.35,0.00,42,42,2035,0.995,0.995,0.995,0.995,0.995,0.995,,,"Reserved emergency/spot channel; cannot be planned as a base source for more than two consecutive years"

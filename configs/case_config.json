@@ -1,0 +1,62 @@
+{
+  "case_name": "Toplivny kosmokontur 2035",
+  "horizon": [2035, 2036, 2037, 2038, 2039, 2040],
+  "currency": "million constant 2035 case units",
+  "service_constraints_standard": {
+    "critical_min": 0.99,
+    "total_min": 0.97
+  },
+  "capex_limits_m": {
+    "through_2037": 1800.0,
+    "through_2040": 2800.0
+  },
+  "reserve_days": 45,
+  "days_per_year": 365,
+  "storage": {
+    "base_capacity_t": 70.0,
+    "base_loss_rate_on_gross_inbound": 0.045,
+    "holding_cost_m_per_t_year": 0.72,
+    "upgrade": {
+      "case_label": "ZBO-modernization",
+      "scientific_label": "CFM/ZBO-like storage upgrade",
+      "available_from": 2036,
+      "capex_m": 180.0,
+      "capacity_t": 120.0,
+      "loss_rate_on_gross_inbound": 0.012,
+      "fixed_opex_m_per_year": 12.0,
+      "note": "The 1.2% loss rate is a synthetic case coefficient and must not be presented as a real zero-boil-off performance figure."
+    }
+  },
+  "investments": {
+    "lunar_isru": {
+      "capex_m": 1250.0,
+      "funded_by_year_end": 2037,
+      "available_from": 2038,
+      "fixed_opex_m_per_year": 70.0
+    },
+    "earth_new": {
+      "option_fee_m": 90.0,
+      "exercise_capex_m": 270.0,
+      "total_capex_m": 360.0,
+      "lead_time_days_range": [548, 730]
+    }
+  },
+  "stress": {
+    "demand_multiplier": {"2038": 1.15, "2039": 1.15, "2040": 1.15},
+    "variable_price_multiplier": {
+      "A": {"2038": 1.25, "2039": 1.25, "2040": 1.0},
+      "B": {"2038": 1.25, "2039": 1.25, "2040": 1.0}
+    },
+    "isru_delivery_factor": {"2038": 0.55, "2039": 0.75, "2040": 1.0},
+    "max_storage_loss_rate_from_2038": 0.02,
+    "service_levels_are_targets_not_hard_constraints": true
+  },
+  "default_assumptions": {
+    "real_discount_rate": 0.05,
+    "discount_base_year": 2035,
+    "earth_new_lead_days_for_gate_check": 730,
+    "lunar_isru_lead_days_for_gate_check": 61,
+    "annual_plan_delivery_profile": "uniform_by_model_day_from_first_delivery_month",
+    "critical_demand_priority": "critical_first"
+  }
+}
