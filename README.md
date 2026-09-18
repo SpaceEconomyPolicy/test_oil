@@ -721,12 +721,12 @@ closing_inventory = 13
 
 | Критерий | Баллы | Проверяемый предмет |
 |---|---:|---|
-| Корректность и надёжность расчётной модели | 25 | formulas, units, timing, capacity, storage, service, reserve, payments, tests |
+| Надёжность и корректность модели | 25 | formulas, units, timing, capacity, storage, service, reserve, payments, tests |
 | Архитектура расчёта и обоснование стратегии | 20 | decision logic, alternatives, contracts, investments, assumptions |
-| Методики и результаты stress testing | 20 | mandatory stress, sensitivity, own risks, thresholds |
-| Реестр рисков | 15 | quantified consequences, basis, dependencies, owners, mitigation |
-| Stakeholders и адаптация | 10 | interests, metrics, contracts, change under risk |
-| Работоспособность digital contour | 10 | change/recalculate/save/reopen/export/extend |
+| Стресс тестирование | 20 | mandatory stress, sensitivity, own risks, thresholds |
+| Оценка рисков | 15 | quantified consequences, basis, dependencies, owners, mitigation |
+| Интересы заинтересованных сторон | 10 | interests, metrics, contracts, change under risk |
+| Функциональность цифрового контура | 10 | change/recalculate/save/reopen/export/extend |
 
 
 Основная шкала — 100
