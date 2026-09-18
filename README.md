@@ -672,7 +672,7 @@ closing_inventory = 13
 
 Эти тесты проверяют арифметику, а не качество competition strategy. Прохождение V01–V10 не означает, что выбран хороший source mix.
 
-Ожидаемые значения: [`validation/expected_checks.json`](validation/expected_checks.json).
+Значения: [`validation/expected_checks.json`](validation/expected_checks.json).
 
 ---
 
