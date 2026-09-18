@@ -758,7 +758,7 @@ source_or_TEAM_ASSUMPTION
 
 ## 32. Структура репозитория команды
 
-Организатор не требует точного дерева. Один понятный вариант:
+Организатор не требует точного дерева. Примерный вариант:
 
 ```text
 participant-solution/
@@ -768,6 +768,7 @@ participant-solution/
 ├── configs/
 ├── tests/
 ├── results/
+├── presentation/
 └── docs/
 ```
 
