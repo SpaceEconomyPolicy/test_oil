@@ -802,8 +802,7 @@ source
 - Guo et al. (2025) — supply-chain resilience, inventory, multiple sourcing and reservation;
 - Kenny et al. / Perrin (2025) — ISCPT engineering context.
 
-Подробная evidence map: [`docs/SCIENTIFIC_BASIS.md`](docs/SCIENTIFIC_BASIS.md).  
-Библиография: [`docs/SOURCES.md`](docs/SOURCES.md).
+Подробная библиография: [`docs/SCIENTIFIC_BASIS.md`](docs/SCIENTIFIC_BASIS.md).  
 
 Внешняя статья не заменяет `CASE_INPUT`: например, cryogenic paper не используется для объявления case-model ZBO loss 1.2% реальным universal benchmark.
 
