@@ -159,7 +159,7 @@ flowchart LR
     LI[Lunar-ISRU] --> HUB
     EM[Emergency] -. аварийный/резервный путь .-> HUB
     HUB --> ST[Хранилище]
-    HUB --> LOSS["Потери"]
+    ST --> LOSS["Потери"]
     ST --> CR[Критический спрос]
     ST --> OT[Остальной спрос]
 ```
