@@ -182,7 +182,6 @@ flowchart LR
 Денежные значения выражаются в **млн условных денежных единиц в постоянных ценах 2035 года**.
 
 Словарь полей: [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md).  
-Происхождение чисел: [`docs/ERRATA_AND_PROVENANCE.md`](docs/ERRATA_AND_PROVENANCE.md).
 
 ---
 
@@ -844,8 +843,8 @@ scenarios/   BASE и MANDATORY_STRESS
 schemas/     переносимые contracts данных/плана/export
 examples/    пустой plan и synthetic invalid examples
 validation/  arithmetic test vectors
-docs/        rules, provenance, jury route, science, sources, FAQ
-tools/       static integrity checks; не solver кейса
+docs/        rules, sources, FAQ
+tools/       static integrity checks
 ```
 
 Начните с [`data/README.md`](data/README.md), затем прочитайте [`docs/CASE_RULES.md`](docs/CASE_RULES.md) и [`docs/CALCULATION_RULES.md`](docs/CALCULATION_RULES.md). После реализации прогоните [`validation/control_cases.md`](validation/control_cases.md) и собственные integration tests.
